@@ -1,12 +1,3 @@
-[submodule "src/nhatansteel-src"]
-	path = src/nhatansteel-src
-	url = https://github.com/thanhdanh2604/nhatansteel-src
-[submodule "src/nhatansteel-fe"]
-	path = src/nhatansteel-fe
-	url = https://github.com/thanhdanh2604/nhatansteel-fe
 [submodule "src/propolife-webs"]
 	path = src/propolife-webs
 	url = git@github.com:fudosan-king/propolife-webs.git
-[submodule "src/badminton-app"]
-	path = src/badminton-app
-	url = https://github.com/thanhdanh2604/badminton-app.git

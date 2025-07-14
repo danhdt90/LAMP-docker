@@ -1,11 +1,11 @@
 {
-    // === FOCUSED MODE: badminton-app ===
+    // === FOCUSED MODE: propolife-webs ===
     "files.exclude": {
         "data": true,
         "logs": true,
         "src/nhatansteel-src": true,
         "src/nhatansteel-fe": true,
-        "src/propolife-webs": true,
+        "src/badminton-app": true,
         "**/.git": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true
@@ -17,7 +17,7 @@
         "logs": true,
         "src/nhatansteel-src": true,
         "src/nhatansteel-fe": true,
-        "src/propolife-webs": true,
+        "src/badminton-app": true,
         "**/.git": true,
         "**/*.min.js": true,
         "**/*.min.css": true
@@ -30,14 +30,14 @@
         "**/.git/**": true,
         "src/nhatansteel-src/**": true,
         "src/nhatansteel-fe/**": true,
-        "src/propolife-webs/**": true,
+        "src/badminton-app/**": true,
         "**/storage/**": true,
         "**/bootstrap/cache/**": true
     },
     
     // === GIT OPTIMIZATION ===
     "git.autoRepositoryDetection": "subFolders",
-    "git.scanRepositories": ["src/badminton-app"],
+    "git.scanRepositories": ["src/propolife-webs"],
     "git.ignoreLimitWarning": true,
     
     // === COPILOT OPTIMIZATION ===
