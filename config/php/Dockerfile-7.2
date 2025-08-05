@@ -1,0 +1,31 @@
+ARG PHP_VERSION=7.2
+FROM php:${PHP_VERSION}-fpm
+
+# Install mysqli extension
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+# Update sources.list dùng repo archive của Debian Buster và cài đặt các gói cần thiết
+RUN echo "deb [trusted=yes] http://archive.debian.org/debian buster main" > /etc/apt/sources.list && \
+    echo "deb [trusted=yes] http://archive.debian.org/debian buster-updates main" >> /etc/apt/sources.list && \
+    echo "deb [trusted=yes] http://archive.debian.org/debian-security buster/updates main" >> /etc/apt/sources.list && \
+    echo "Acquire::Check-Valid-Until false;" > /etc/apt/apt.conf.d/99no-check-valid-until && \
+    apt-get update && apt-get install -y --no-install-recommends \
+    libzip-dev \
+    zip \
+    unzip && \
+    rm -rf /var/lib/apt/lists/* && \
+    docker-php-ext-install zip
+
+# Install Xdebug phiên bản tương thích cho PHP 7.2
+RUN pecl uninstall xdebug || true && \
+    pecl install xdebug-2.9.8 && \
+    docker-php-ext-enable xdebug
+
+# Copy cấu hình Xdebug cho PHP 7.2
+COPY xdebug-7.2.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+# Tạo thư mục session và phân quyền
+RUN mkdir -p /tmp && chmod 1777 /tmp
+
+# Tạo thư mục log cho lỗi PHP
+RUN mkdir -p /var/log && chmod 755 /var/log
