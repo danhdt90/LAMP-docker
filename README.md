@@ -17,9 +17,7 @@ docker compose up -d
 
 # 4. Access your applications (auto-detected from src/ folders)
 # ✅ http://php08.test - PHP Demo
-# ✅ http://nhatansteel-src.test - Backend
-# ✅ http://nhatansteel-fe.test - Frontend  
-# ✅ http://chinokanri.test - Management Demo
+# ✅ http://propolife-webs.test - Portfolio & Business Websites
 # ✅ http://localhost:8081 - phpMyAdmin
 
 # 5. Create new project instantly
@@ -29,8 +27,7 @@ echo "<h1>My Project</h1>" > src/my-project/index.html
 # ✅ http://my-project.test - Ready immediately!
 
 # 6. Initialize submodules when needed
-./manage-submodules.sh init nhatansteel-src
-./manage-submodules.sh init nhatansteel-fe
+./manage-submodules.sh init propolife-webs
 ```
 
 ## 📁 Cấu trúc Project
@@ -42,8 +39,7 @@ LAMP-docker/
 │   ├── nginx/
 │   └── php/
 ├── src/                        # Source code directory
-│   ├── nhatansteel-src/       # Backend submodule
-│   ├── nhatansteel-fe/        # Frontend submodule
+│   ├── propolife-webs/        # WordPress Portfolio & Business Websites
 │   └── php08/                 # PHP application
 ├── manage-submodules.sh        # Submodule management script
 └── README.md

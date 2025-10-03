@@ -27,19 +27,16 @@ print_menu() {
     echo -e "${BOLD}Choose your workflow:${NC}"
     echo ""
     echo -e "${GREEN}🎯 FOCUSED WORKFLOWS (Recommended)${NC}"
-    echo "  1. 🏸 Work on Badminton App (React/Laravel)"
-    echo "  2. 🌐 Work on PropoLife Webs (WordPress/Portfolio)"
-    echo "  3. 🏢 Work on NhatAn Steel Backend (Laravel API)"
-    echo "  4. 💻 Work on NhatAn Steel Frontend (React/Vue)"
+    echo "  1.  Work on PropoLife Webs (WordPress/Portfolio)"
     echo ""
     echo -e "${YELLOW}⚡ PERFORMANCE MODES${NC}"
-    echo "  5. 🔧 Docker Management Only (Hide All Projects)"
-    echo "  6. 👁️ Show All Projects (May impact performance)"
+    echo "  2. 🔧 Docker Management Only (Hide All Projects)"
+    echo "  3. 👁️ Show All Projects (May impact performance)"
     echo ""
     echo -e "${BLUE}🛠️ UTILITIES${NC}"
-    echo "  7. 📊 Show Current Status"
-    echo "  8. 🧹 Clean Cache Files"
-    echo "  9. ❓ Help & Tips"
+    echo "  4. 📊 Show Current Status"
+    echo "  5. 🧹 Clean Cache Files"
+    echo "  6. ❓ Help & Tips"
     echo "  0. 🚪 Exit"
     echo ""
 }
@@ -48,33 +45,12 @@ show_project_info() {
     local project="$1"
     
     case $project in
-        "badminton-app")
-            echo -e "${GREEN}🏸 Badminton App${NC}"
-            echo "  📁 Location: src/badminton-app"
-            echo "  🛠️ Tech Stack: React, Laravel, Filament"
-            echo "  🌐 Domain: http://badminton.test"
-            echo "  📖 Purpose: Sports management application"
-            ;;
         "propolife-webs")
             echo -e "${GREEN}🌐 PropoLife Webs${NC}"
             echo "  📁 Location: src/propolife-webs"
             echo "  🛠️ Tech Stack: WordPress, PHP"
             echo "  🌐 Domains: http://propolife-webs.test, http://logprostyle.test"
             echo "  📖 Purpose: Portfolio and business websites"
-            ;;
-        "nhatansteel-src")
-            echo -e "${GREEN}🏢 NhatAn Steel Backend${NC}"
-            echo "  📁 Location: src/nhatansteel-src"
-            echo "  🛠️ Tech Stack: Laravel, PHP, MySQL"
-            echo "  🌐 Domain: http://nhatansteel-src.test"
-            echo "  📖 Purpose: Steel company backend API"
-            ;;
-        "nhatansteel-fe")
-            echo -e "${GREEN}💻 NhatAn Steel Frontend${NC}"
-            echo "  📁 Location: src/nhatansteel-fe"
-            echo "  🛠️ Tech Stack: React/Vue, JavaScript"
-            echo "  🌐 Domain: http://nhatansteel-fe.test"
-            echo "  📖 Purpose: Steel company frontend application"
             ;;
     esac
 }
@@ -120,16 +96,6 @@ execute_choice() {
     case $choice in
         1)
             echo ""
-            show_project_info "badminton-app"
-            echo ""
-            echo -e "${YELLOW}Optimizing workspace for Badminton App...${NC}"
-            ./optimize-workspace.sh focus badminton-app
-            echo ""
-            echo -e "${GREEN}✅ Ready to work on Badminton App!${NC}"
-            echo "💡 Restart VS Code for best performance"
-            ;;
-        2)
-            echo ""
             show_project_info "propolife-webs"
             echo ""
             echo -e "${YELLOW}Optimizing workspace for PropoLife Webs...${NC}"
@@ -138,27 +104,7 @@ execute_choice() {
             echo -e "${GREEN}✅ Ready to work on PropoLife Webs!${NC}"
             echo "💡 Restart VS Code for best performance"
             ;;
-        3)
-            echo ""
-            show_project_info "nhatansteel-src"
-            echo ""
-            echo -e "${YELLOW}Optimizing workspace for NhatAn Steel Backend...${NC}"
-            ./optimize-workspace.sh focus nhatansteel-src
-            echo ""
-            echo -e "${GREEN}✅ Ready to work on NhatAn Steel Backend!${NC}"
-            echo "💡 Restart VS Code for best performance"
-            ;;
-        4)
-            echo ""
-            show_project_info "nhatansteel-fe"
-            echo ""
-            echo -e "${YELLOW}Optimizing workspace for NhatAn Steel Frontend...${NC}"
-            ./optimize-workspace.sh focus nhatansteel-fe
-            echo ""
-            echo -e "${GREEN}✅ Ready to work on NhatAn Steel Frontend!${NC}"
-            echo "💡 Restart VS Code for best performance"
-            ;;
-        5)
+        2)
             echo ""
             echo -e "${YELLOW}Activating Docker Management Mode...${NC}"
             ./optimize-workspace.sh hide-all
@@ -167,7 +113,7 @@ execute_choice() {
             echo "🔧 All submodules hidden for maximum performance"
             echo "💡 Perfect for Docker configuration and debugging"
             ;;
-        6)
+        3)
             echo ""
             echo -e "${YELLOW}Showing all projects...${NC}"
             ./optimize-workspace.sh show-all
@@ -176,18 +122,18 @@ execute_choice() {
             echo -e "${RED}⚠️ Performance may be impacted with all projects visible${NC}"
             echo "💡 Consider using focused mode for better performance"
             ;;
-        7)
+        4)
             echo ""
             ./optimize-workspace.sh status
             ;;
-        8)
+        5)
             echo ""
             echo -e "${YELLOW}Cleaning cache files...${NC}"
             ./optimize-workspace.sh clean
             echo ""
             echo -e "${GREEN}✅ Cache cleaning completed!${NC}"
             ;;
-        9)
+        6)
             echo ""
             show_tips
             ;;
@@ -222,7 +168,7 @@ main() {
         print_logo
         print_menu
         
-        echo -n "Enter your choice (0-9): "
+        echo -n "Enter your choice (0-6): "
         read -r choice
         
         execute_choice "$choice"

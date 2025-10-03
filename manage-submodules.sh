@@ -3,7 +3,7 @@
 # Script to manage submodules selectively
 # Usage: ./manage-submodules.sh [command] [submodule_name]
 
-SUBMODULES=("nhatansteel-src" "nhatansteel-fe" "propolife-webs")
+SUBMODULES=("propolife-webs")
 
 show_help() {
     echo "Usage: $0 [command] [submodule_name]"
