@@ -1,3 +1,6 @@
 [submodule "src/propolife-webs"]
 	path = src/propolife-webs
 	url = git@github.com:fudosan-king/propolife-webs.git
+[submodule "src/prostyle-webs"]
+	path = src/prostyle-webs
+	url = git@github.com:fudosan-king/prostyle-webs.git

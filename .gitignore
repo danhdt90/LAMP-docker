@@ -94,3 +94,7 @@ src/*/phpunit.xml.bak
 
 # VS Code workspace optimization
 .vscode/settings.json.backup
+
+
+.env
+.env
