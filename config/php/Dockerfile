@@ -9,7 +9,12 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 RUN apt-get update && apt-get install -y \
     libzip-dev \
     zip \
+    curl \
     && docker-php-ext-install zip
+
+# Install WP-CLI
+RUN curl -fsSL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
+    && chmod +x /usr/local/bin/wp
 
 # Install Xdebug (compatible version based on PHP version)
 ARG PHP_VERSION

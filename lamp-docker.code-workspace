@@ -3,6 +3,9 @@
         {
             "name": "🐳 LAMP Docker (Main)",
             "path": "."
+        },
+        {
+            "path": "../front_design"
         }
     ],
     "settings": {
